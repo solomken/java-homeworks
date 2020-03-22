@@ -85,6 +85,7 @@ public class App {
             if (answer.equals("y")) {
                 restart(args);
             }
+            else return;
         }
 
         Scanner input2 = new Scanner(System.in);
@@ -99,6 +100,7 @@ public class App {
             if (answer.equals("y")) {
                 restart(args);
             }
+            else return;
         }
 
         Scanner input3 = new Scanner(System.in);
