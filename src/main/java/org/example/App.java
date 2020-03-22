@@ -84,8 +84,7 @@ public class App {
             answer = input4.nextLine();
             if (answer.equals("y")) {
                 restart(args);
-            }
-            else return;
+            } else return;
         }
 
         Scanner input2 = new Scanner(System.in);
@@ -99,24 +98,29 @@ public class App {
             answer = input4.nextLine();
             if (answer.equals("y")) {
                 restart(args);
-            }
-            else return;
+            } else return;
         }
 
         Scanner input3 = new Scanner(System.in);
         System.out.println("Choose operation:\n+\n-\n*\n/");
         if (input3.hasNextLine()) {
             operation = input3.nextLine();
-            if (operation.equals("+")) {
-                result = num1 + num2;
-            } else if (operation.equals("-")) {
-                result = num1 - num2;
-            } else if (operation.equals("*")) {
-                result = num1 * num2;
-            } else if (operation.equals("/")) {
-                result = num1 / num2;
-            } else {
-                isError = true;
+            switch (operation) {
+                case "+":
+                    result = num1 + num2;
+                    break;
+                case "-":
+                    result = num1 - num2;
+                    break;
+                case "*":
+                    result = num1 * num2;
+                    break;
+                case "/":
+                    result = num1 / num2;
+                    break;
+                default:
+                    isError = true;
+                    break;
             }
         } else {
             isError = true;
@@ -124,8 +128,7 @@ public class App {
 
         if (!isError) {
             System.out.println("Result: " + result);
-        }
-        else {
+        } else {
             System.out.println("Incorrect operation, dude");
         }
 
@@ -136,7 +139,6 @@ public class App {
             restart(args);
         }
 
-        return;
     }
 
     private static void restart(String[] strArr) {
